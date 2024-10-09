@@ -1,0 +1,150 @@
+@use "./config" as *;
+
+.container  {
+  .main-text .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mobile() {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }  
+  }
+  .carts {
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    gap: 30px;
+    @include laptop() {
+      grid-template-columns: repeat(3 , 1fr);
+    }
+    @include tablet() {
+      grid-template-columns: repeat(2 , 1fr);
+    }
+    @include mobile() {
+      grid-template-columns: repeat(1 , 1fr);
+    }
+    @include laptop() {
+      .cart:nth-child(10) {
+        display: none;
+      }
+      .cart:nth-child(11) {
+        display: none;
+      }
+      .cart:nth-child(12) {
+        display: none;
+      }
+    }
+    @include tablet() {
+      .cart:nth-child(7) {
+        display: none;
+      }
+      .cart:nth-child(8) {
+        display: none;
+      }
+      .cart:nth-child(9) {
+        display: none;
+      }
+      .cart:nth-child(10) {
+        display: none;
+      }
+      .cart:nth-child(11) {
+        display: none;
+      }
+      .cart:nth-child(12) {
+        display: none;
+      }
+    }
+    .cart:hover,a:hover {
+      transform: scale(0.95,0.95);
+    }
+    .cart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
+      text-align: center;
+      background: $second-color;
+      padding: 20px;
+      border-radius: 20px;
+      position: relative;
+      transition: 0.3s all linear;
+      .cart-img {
+        width: 120px;
+        height: 120px;
+        display: contents;
+        .number-cart { 
+          position: absolute;
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background-color: $main-color;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          top: 20px;
+          left: 10%;
+          @include tablet() {
+            top: 8px;
+            left: 4%;
+          }
+          color: $gery-color;
+          font: {
+            size: 16px;
+            family: $font-spaceMono;
+            weight: 600;
+          }
+        }
+      }
+      .cart-title {
+        .cart-name {
+          color: #FFF;
+          text-align: center;
+          font-size: 22px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%; /* 30.8px */
+          text-transform: capitalize;
+          font: {
+            size: 22px;
+            family: $font-workSans;
+            weight: bold;
+          }
+        }
+        .sales {
+          color: $gery-color;
+          font: {
+            size: 16px;
+            weight: 100;
+            family: $font-workSans;
+          }
+          span {
+            color: $white-color;
+            font: {
+              size: 16px;
+              weight: 400;
+              family: $font-spaceMono;
+            }
+          }
+        }
+      }
+      @include tablet() {
+        flex-direction: row;
+        column-gap: 20px;
+        align-items: center;
+        .cart-img {
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .cart-title {
+        .cart-name, .sales {
+          text-align: left;
+        }
+        }
+      }
+    }
+  }
+}

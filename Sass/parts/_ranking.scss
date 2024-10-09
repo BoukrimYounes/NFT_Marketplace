@@ -1,0 +1,199 @@
+@use "./config" as *;
+
+#rank {
+  .container.key {
+    border-top: none;
+    padding-block: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    div {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 10px;
+      p {
+        color: $white-color;
+        font-family: $font-workSans;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &:first-child {
+          @include mobile() {
+            display: none;
+          }
+        }
+      }
+      .mobile {
+        display: none;
+        @include mobile() {
+          display: block;
+        }
+      }
+    }
+    div:first-child {
+      border-bottom: 2px solid $gery-color;
+    }
+    div:nth-child(2) {
+      p {
+        color: $gery-color;
+        span {
+          background: $second-color;
+          color: $white-color;
+        }
+      }
+    }
+    div:nth-child(3) {
+      p {
+        color: $gery-color;
+        span {
+          background: $second-color;
+          color: $white-color;
+        }
+      }
+    }
+    div:nth-child(4) {
+      p {
+        color: $gery-color;
+        span {
+          background: $second-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+.container.rank-list {
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .main-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $second-color;
+    padding: 10px 5rem;
+    @include tablet() {
+      padding: 10px 2rem;
+    }
+    border-radius: 30px;
+    div {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+      @media (max-width: 1197px) {
+        gap: 3rem;
+      }
+      @include tablet() {
+        gap: 1rem;
+      }
+      p {
+        font-size: 20px;
+        @include tablet() {
+          font-size: 16px;
+        }
+        color: $gery-color;
+        font-family: $font-spaceMono;
+      }
+    }
+    .lite-information {
+      @include laptop() {
+        p {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+      @include tablet() {
+        p {
+          &:nth-child(1) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .second-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5rem;
+    @include tablet() {
+      padding: 10px 2rem;
+    }
+    border-radius: 25px;
+    background-color: $second-color;
+    .part-one {
+      display: flex;
+      align-items: center;
+      gap: 6rem;
+      @media (max-width: 1197px) {
+        gap: 3rem;
+      }
+      @include tablet() {
+        gap: 1rem;
+      }
+      span {
+        color: $gery-color;
+        font-family: $font-spaceMono;
+      }
+      p {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: $font-workSans;
+        color: $white-color;
+        font-weight: 700;
+        font-size: 25px;
+        @include tablet() {
+          font-size: 20px;
+        }
+        @include mobile() {
+          font-size: 16px;
+        }
+        img {
+          width: 50px;
+        }
+      }
+    }
+    .part-two {
+      display: flex;
+      align-items: center;
+      gap: 9rem;
+      @media (max-width: 1197px) {
+        gap: 6rem;
+      }
+      @include laptop() {
+        gap: 4rem;
+      }
+      @include tablet() {
+        gap: 2.5rem;
+      }
+      p {
+        color: $white-color;
+        font-family: $font-spaceMono;
+        font-size: 16px;
+        &:first-child {
+          color: #00ff80;
+        }
+        @include laptop() {
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+        @include tablet() {
+          &:nth-child(1) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

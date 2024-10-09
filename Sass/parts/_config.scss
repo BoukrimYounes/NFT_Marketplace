@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+$main-color: #2b2b2b;
+$second-color: #3b3b3b;
+$gery-color: #858584;
+$white-color: #ffffff;
+$button-color: #a259ff;
+$font-spaceMono: "Space Mono", monospace;
+$font-workSans: "Work Sans", sans-serif;
+$laptop-width: 1023px;
+$tablet-width: 767px;
+$mabile-width: 480px;
+
+@mixin mobile {
+  @media (max-width: $mabile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $laptop-width) {
+    @content;
+  }
+}
+
+body {
+  background-color: $main-color;
+  overflow-x: hidden;
+}
+
+.btn {
+  display: flex;
+  width: fit-content;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 20px;
+  background-color: $button-color;
+  color: $white-color;
+  font-family: $font-workSans;
+  font-weight: 600;
+  font-size: 16px;
+  .bx {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}
+
+.btn-1 {
+  display: flex;
+  width: fit-content;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: $main-color;
+  border: 1.5px solid $button-color;
+  border-radius: 20px;
+  color: $white-color;
+  font-family: $font-workSans;
+  font-weight: 600;
+  font-size: 16px;
+  .bx,
+  .ri-eye-line,
+  i {
+    font-size: 18px;
+    font-weight: 500;
+    color: $button-color;
+  }
+}
+
+.btn-white {
+  display: flex;
+  width: fit-content;
+  padding: 15px 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background-color: $white-color;
+  border-radius: 20px;
+  color: $main-color;
+  font-family: $font-workSans;
+  font-weight: 600;
+  font-size: 16px;
+  .ri-eye-line {
+    font-size: 18px;
+    font-weight: 500;
+    color: $button-color;
+  }
+}
+
+.container {
+  padding: 5rem;
+  @include laptop() {
+    max-width: 1023px;
+    padding: 4rem;
+  }
+  @include tablet() {
+    max-width: 767px;
+    padding: 2rem;
+  }
+  @include mobile() {
+    max-width: 480px;
+    padding: 1rem;
+    padding-block: 2rem;
+  }
+}
+
+h1 {
+  font-size: 67px;
+  @include laptop() {
+    font-size: 38px;
+  }
+  @include laptop() {
+    font-size: 28px;
+  }
+}
+
+h2 {
+  font-family: "Work Sans";
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 56.1px */
+  text-transform: capitalize;
+  font-family: $font-workSans;
+  color: $white-color;
+  @include laptop() {
+    font-size: 38px;
+    line-height: 120%; /* 56.1px */
+  }
+}
+
+p {
+  font-size: 22px;
+  @include laptop() {
+    font-size: 16px;
+  }
+}
+
+h5 {
+  font-size: 28px;
+  @include laptop() {
+    font-size: 22px;
+  }
+}
+
+h3 {
+  font-size: 38px;
+  @include laptop() {
+    font-size: 28px;
+  }
+}
+
+.second-title {
+  font-size: 22px;
+  @include laptop() {
+    font-size: 16px;
+  }
+}
+
+.subscribe-holder {
+  background: $white-color;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 40px;
+  input[type="email"] {
+    width: 100%;
+    padding: 10px 15px;
+    color: #2b2b2b;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  button {
+    cursor: pointer;
+  }
+}

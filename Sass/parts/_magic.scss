@@ -1,0 +1,99 @@
+@use "./config" as *;
+
+.magic-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-image: url(../../Img/images/NFT.png);
+  background-position: center;
+  background-size: cover;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    @include tablet() {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 20px;
+    }
+    .magic-text {
+      display: flex;
+      flex-direction: column;
+      row-gap: 50px;
+      .magic-name {
+        display: flex;
+        align-items: center;
+        -moz-column-gap: 10px;
+        column-gap: 10px;
+        width: fit-content;
+        padding: 10px 20px;
+        background-color: #3b3b3b;
+        border-radius: 40px;
+        p {
+          font-family: $font-workSans;
+          color: $white-color;
+        }
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .magic-time {
+      background-color: #00000030;
+      padding: 20px 40px;
+      @include mobile() {
+        padding: 15px 25px;
+      }
+      border-radius: 40px;
+      .auction {
+        font-size: 16px;
+        font-family: $font-spaceMono;
+        color: $white-color;
+        margin-bottom: 20px;
+        font-weight: 200;
+      }
+      div {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 50px;
+        @include mobile() {
+          column-gap: 20px;
+        }
+        div {
+          font-size: 20px;
+          color: $white-color;
+          font-weight: bold;
+          font-family: $font-spaceMono;
+        }
+        .t {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 15px;
+          p:first-child {
+            font-size: 40px;
+            font-weight: 800;
+          }
+          p {
+            font-size: 20px;
+            color: $white-color;
+            font-family: $font-spaceMono;
+            font-weight: 200;
+          }
+        }
+      }
+    }
+  }
+}
+.magic-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(180deg, Transparent, #a259ff 100%);
+}

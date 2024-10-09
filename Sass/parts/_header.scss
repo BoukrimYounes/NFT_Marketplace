@@ -1,0 +1,69 @@
+@use "./config" as *;
+
+header .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 5%;
+  @include tablet() {
+    grid-template-columns: 1fr;
+    row-gap: 5%;
+  }
+  .text-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    h1 {
+      color: $white-color;
+      font-family: $font-workSans;
+      word-spacing: 1.5px;
+      line-height: 1.11;
+      @include tablet() {
+        text-align: center;
+      }
+    }
+    p {
+      color: $white-color;
+      font-family: $font-workSans;
+      word-spacing: 3px;
+      letter-spacing: 0.8px;
+      line-height: 28px;
+      text-align: left;
+      @include tablet() {
+        text-align: center;
+      }
+    }
+    .btn {
+      @include tablet() {
+        margin-inline: auto;
+      }
+    }
+    .statistics {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div {
+        h5 {
+          font-family: $font-spaceMono;
+          font-weight: 600;
+          color: $white-color;
+        }
+        p.num {
+          font-family: $font-workSans;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .image-header {
+    width: 100%;
+    margin-inline: auto;
+    img {
+      max-width: 100%;
+      align-self: center;
+    }
+  }
+}

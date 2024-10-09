@@ -1,0 +1,87 @@
+@use "./config" as *;
+
+
+.sign_up {
+  width: 100vw;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  @include laptop() {
+    gap: 60px;
+  }
+  @include tablet() {
+    gap: 20px;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .image-sign_up {
+    width: 50%;
+    height: 100vh;
+    @include tablet() {
+      width: 100%;
+      height: 50vh;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .inputs-sign_up {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 35px;
+    @include tablet() {
+      gap: 25px;
+      padding-left: 2rem;
+      margin-bottom: 20px;
+    }
+    @include mobile() {
+      gap: 15px;
+      padding-left: 1rem;
+    }
+    p {
+      color: $white-color;
+      font-family: $font-workSans;
+      line-height: 30px;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+      div {
+        width: 100%;
+        background: $white-color;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 5px 20px;
+        gap: 10px;
+        border-radius: 20px;
+        i {
+          font-size: 20px;
+          color: $gery-color;
+        }
+        input {
+          width: 100%;
+          padding: 10px 10px;
+          font-size: 16px;
+          font-family: $font-workSans;
+          
+          font-weight: 500;
+          &::placeholder {
+            color: $gery-color;
+            font-family: $font-workSans;
+            font-weight: 500;
+          }
+        }
+      }  
+      a {
+      width: 100%;
+      }
+    }
+  }
+}

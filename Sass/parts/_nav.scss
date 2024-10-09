@@ -1,0 +1,79 @@
+@use "./config" as *;
+.logo img {
+  width: 100%;
+  @include tablet() {
+    width: 95%;
+  }
+  @include mobile() {
+    width: 80%;
+  }
+}
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+  @include laptop() {
+    padding: 15px 30px;
+  }
+  @include laptop() {
+    padding: 15px 10px;
+  }
+  &_items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+    @include laptop() {
+      display: none;
+      padding: 20px 40px;
+      flex-direction: column;
+      background-color: $gery-color;
+      position: absolute;
+      right: 5px;
+      top: 60px;
+      z-index: 9999;
+      &::before {
+        position: absolute;
+        content: "";
+        top: -16px;
+        right: 11px;
+        border-width: 8px 8px 8px 8px;
+        border-style: solid;
+        border-color: transparent transparent $gery-color transparent;
+      }
+      border-radius: 5px;
+    }
+    .nav_link {
+      display: block;
+      color: $white-color;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      font-family: $font-workSans;
+      line-height: 140%;
+      transition: all 0.5s ease;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+  &_menu {
+    display: none;
+    @include laptop() {
+      display: flex;
+      color: $white-color;
+      font-size: 30px;
+      font-weight: 600;
+      background-color: $gery-color;
+      border-radius: 5px;
+    }
+  }
+}
+
+.add {
+  display: flex;
+}

@@ -1,0 +1,111 @@
+@use "./config" as *;
+
+
+
+footer {
+  background-color: $second-color;
+  .container {
+    padding-bottom: 1rem;
+  }
+  .footer-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    @include laptop() {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+    .box-1,
+    .box-2,
+    .box-3 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .box-1 {
+      h5 {
+      margin-top: 5px;
+      }
+      p {
+        font-size: 16px;
+        color: $gery-color;
+        font-family: $font-workSans;
+        font-weight: 200;
+      }
+      .social {
+        font-size: 25px;
+        color: $gery-color;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        i {
+          cursor: pointer;
+          transition: 0.3s all ease-in;
+          &:hover {
+            color: $button-color;
+          }
+        }
+      }
+    }
+    .box-2 {
+      h5 {
+        color: $white-color;
+        font-family: $font-spaceMono;
+        margin-bottom: 3px;
+      }
+      a {
+        font-size: 16px;
+        color: $gery-color;
+        font-family: $font-workSans;
+        font-weight: 200;
+        transition: 0.3s all ease-in;
+        &:hover {
+        color: $button-color;
+        }
+      }
+    }
+    .box-3 {
+      h5 {
+        color: $white-color;
+        font-family: $font-spaceMono;
+        margin-bottom: 3px;
+      }
+      p {
+        font-size: 16px;
+        color: $gery-color;
+        font-family: $font-workSans;
+        font-weight: 200;
+      }
+      .subscribe-holder {
+        margin-top: 5px;
+      }
+    }
+  }
+  .copyright {
+    width: 95%;
+    margin-inline: auto;
+    padding: 20px 0px 10px;
+    margin-top: 20px;
+    border-top: 1px solid $gery-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include laptop() {
+      justify-content: flex-start;
+      padding-left: 3rem;
+    }
+    @include tablet() {
+      justify-content: flex-start;
+      padding-left: 1rem;
+    }
+    small {
+      font-size: 12px;
+      font-family: $font-workSans;
+      color: $gery-color;
+    }
+  }
+}
+
+
+

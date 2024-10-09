@@ -1,0 +1,58 @@
+@use "./config" as *;
+
+#browse {
+  .boxs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    @include laptop() {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      background-color: $second-color;
+      border-radius: 25px;
+      overflow: hidden;
+      transition: 0.3s all linear;
+      cursor: pointer;
+      &:hover {
+        transform: scale(0.95, 0.95);
+      }
+      .img-box {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        .img-main {
+          width: 100%;
+          filter: blur(5px);
+        }
+        .center {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 130px;
+          height: 130px;
+        }
+      }
+      .text-box {
+        padding: 10px 15px 20px;
+        h5 {
+          color: $white-color;
+          font-family: $font-workSans;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

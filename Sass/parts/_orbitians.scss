@@ -1,0 +1,198 @@
+@use "./config" as *;
+
+.orbitians-header_img {
+  width: 100%;
+  height: 60vh;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.container.orbitians-content {
+  display: block;
+  .first-orbitian {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media (max-width: 608px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+    .box1 {
+      p {
+        font-family: $font-workSans;
+        color: $gery-color;
+        margin-top: 10px;
+      }
+      h5 {
+        font-family: $font-spaceMono;
+        color: $gery-color;
+        margin-top: 10px;
+      }
+      .name-orbitian {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        transition: 0.3s all linear;
+        &:hover {
+          transform: scale(0.95, 0.95);
+        }
+        img {
+          width: 20px;
+        }
+        .p-name {
+          color: $white-color;
+          font-weight: bold;
+          margin: 0;
+        }
+      }
+    }
+    .box2 {
+      background: $second-color;
+      padding: 20px 40px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      .title-box2 {
+        align-self: flex-start;
+        font-size: 12px;
+        font-family: $font-spaceMono;
+        color: $white-color;
+      }
+      p {
+        font-size: 2.5rem;
+        color: $white-color;
+        font-weight: bold;
+        font-family: $font-workSans;
+        span {
+          position: relative;
+        }
+      }
+      p span:nth-child(1)::after {
+        content: "Hours";
+        position: absolute;
+        font-size: 10px;
+        font-family: $font-spaceMono;
+        bottom: -10px;
+        left: 10px;
+      }
+      p span:nth-child(2)::after {
+        content: "Minutes";
+        position: absolute;
+        font-size: 10px;
+        font-family: $font-spaceMono;
+        bottom: -10px;
+        left: 13px;
+      }
+      p span:nth-child(3)::after {
+        content: "Seconds";
+        position: absolute;
+        font-size: 10px;
+        font-family: $font-spaceMono;
+        bottom: -10px;
+        left: 13px;
+      }
+      a {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  }
+  .created-by {
+    margin-top: 25px;
+    width: 70%;
+    @include tablet() {
+      width: 100%;
+    }
+    h5 {
+      font-family: $font-spaceMono;
+      color: $gery-color;
+      margin-bottom: 20px;
+    }
+    p {
+      color: $white-color;
+      font-family: $font-workSans;
+    }
+  }
+  .details {
+    margin-top: 25px;
+    h5 {
+      font-family: $font-spaceMono;
+      color: $gery-color;
+      margin-bottom: 20px;
+    }
+    .detail {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      i {
+        color: $gery-color;
+        font-size: 35px;
+      }
+      p {
+        color: $white-color;
+        font-family: $font-workSans;
+      }
+    }
+  }
+  .tags {
+    margin-top: 25px;
+    h5 {
+      font-family: $font-spaceMono;
+      color: $gery-color;
+      margin-bottom: 20px;
+    }
+    div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      a {
+        background: $second-color;
+        padding: 10px 20px;
+        border-radius: 15px;
+        color: $white-color;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-family: $font-workSans;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.orbitians-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  @include mobile() {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 20px;
+  }
+  h3 {
+    color: $white-color;
+    font-family: $font-workSans;
+  }
+}
+
+.orbitians-grid {
+  @include mobile() {
+    .grid-cart:nth-child(1) {
+      display: none;
+    }
+    .grid-cart:nth-child(4) {
+      display: none;
+    }
+    .grid-cart:nth-child(6) {
+      display: none;
+    }
+  }
+}

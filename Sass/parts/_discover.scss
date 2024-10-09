@@ -1,0 +1,74 @@
+@use "./config" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  @include tablet() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile() {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  gap: 30px;
+  .grid-cart {
+    background: $second-color;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 15px;
+    overflow: hidden;
+    border-radius: 28px;
+    transition: 0.3s all linear;
+    &:hover {
+      transform: scale(0.95, 0.95);
+    }
+    .grid_cart-img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .grid_cart-text {
+      width: 100%;
+      padding: 10px 25px 15px;
+      .description {
+        margin-bottom: 15px;
+        h5 {
+          font-family: $font-workSans;
+          color: $white-color;
+          margin-bottom: 10px;
+        }
+        .name_of {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          color: $white-color;
+          font-family: $font-spaceMono;
+          font-size: 18px;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+      .numbers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .price,
+        .highest-bid {
+          .price_text,
+          .eth {
+            font-size: 16px;
+            font-weight: 200;
+            color: $gery-color;
+            font-family: $font-spaceMono;
+          }
+          .eth {
+            color: $white-color;
+          }
+        }
+      }
+    }
+  }
+}
